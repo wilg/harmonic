@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Harmonic Plugin' target in the 'Harmonic Plugin' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

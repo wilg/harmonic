@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowFullAccess</key>
+	<true/>
+	<key>CFBundleDisplayName</key>
+	<string>Harmonic</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mindquirk.widget.harmonic</string>
+	<key>CFBundleName</key>
+	<string>Harmonic</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.3</string>
+	<key>CFBundleVersion</key>
+	<string>2.3</string>
+	<key>CloseBoxInsetX</key>
+	<integer>3</integer>
+	<key>CloseBoxInsetY</key>
+	<integer>3</integer>
+	<key>Height</key>
+	<integer>275</integer>
+	<key>MainHTML</key>
+	<string>harmonic.htm</string>
+	<key>Plugin</key>
+	<string>Harmonic Plugin.bundle</string>
+	<key>Width</key>
+	<integer>272</integer>
+</dict>
+</plist>

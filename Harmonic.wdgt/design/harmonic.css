@@ -1,0 +1,506 @@
+body {
+	height: 100%;
+	margin: 0;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+/* @group Pieces */
+
+#front {
+	height: 100%;
+}
+
+/* @end */
+
+/* @group Frame */
+
+.frame_top_left {
+	position: absolute;
+	top: 1px;
+	left: 0;
+	width: 18px;
+	height: 13px;
+	background-repeat: no-repeat;
+}
+
+.frame_top_center {
+	position: absolute;
+	top: 1px;
+	left: 18px;
+	right: 18px;
+	height: 18px;
+	background-repeat: repeat-x;
+}
+
+.frame_top_right {
+	position: absolute;
+	top: 1px;
+	right: 0;
+	width: 18px;
+	height: 13px;
+	background-repeat: no-repeat;
+}
+
+.frame_bottom_left {
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+
+.frame_bottom_center {
+	position: absolute;
+	bottom: 1px;
+	left: 18px;
+	right: 18px;
+	height: 18px;
+	background-repeat: repeat-x;
+}
+
+.frame_bottom_right {
+	position: absolute;
+	bottom: 1px;
+	right: 0;
+	width: 18px;
+	height: 18px;
+	background-repeat: no-repeat;
+}
+
+.frame_left_edge {
+	position: absolute;
+	left: 0;
+	top: 13px;
+	bottom: 18px;
+	width: 4px;
+	background-repeat: repeat-y;
+}
+
+.frame_right_edge {
+	position: absolute;
+	top: 14px;
+	bottom: 19px;
+	right: 0;
+	width: 8px;
+}
+
+.frame_center {
+	position: absolute;
+	top: 13px;
+	bottom: 18px;
+	right: 8px;
+	left: 4px;
+	overflow: hidden;
+}
+
+#scroll_cover_top {
+	position: absolute;
+	top: 46px;
+	bottom: 18px;
+	left: 6px;
+	right: 27px;
+	height: 6px;
+	background-repeat: repeat-x;
+}
+
+#scroll_cover_bottom {
+	position: absolute;
+	bottom: 0;
+	left: 6px;
+	right: 27px;
+	height: 6px;
+	background-repeat: repeat-x;
+}
+
+/* @end */
+
+/* @group Design */
+
+.header {
+	height: 43px;
+}
+
+.header .title {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font: normal 18px "Helvetica Neue";
+	text-shadow: rgba(1,1,1,.5) 2px 2px 0;
+	color: white;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: relative;
+	top: -1px;
+}
+
+.header .subtitle {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font: normal 14px "Helvetica Neue";
+	text-shadow: rgba(1,1,1,.5) 2px 2px 0;
+	color: #fff;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+		position: relative;
+	top: -1px;
+}
+
+#footer_text {
+	margin-top: 8px;
+	font: 10px "Helvetica Neue";
+	font-weight: normal;
+	color: #fff;
+	text-shadow: none;
+	text-transform: uppercase;
+	text-align: right;
+}
+
+/* @end */
+
+#debug {
+	position: absolute;
+	top: 45px;
+	right: 0;
+	left: 0;
+	text-align: center;
+	font: 10px "Helvetica Neue";
+	font-weight: bold;
+	display: none;
+}
+
+#update {
+	position: absolute;
+	right: 10px;
+	left: 0px;
+	bottom: 6px;
+	text-align: center;
+}
+
+div#update a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+
+div#update a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+
+#warning {
+	position: absolute;
+	top: 150px;
+	right: 0;
+	bottom: 0;
+	left: 20px;
+	width: 128px;
+	height: 60px;
+	color: rgba(0,0,0,0.75);
+	text-align: center;
+	font-weight: bold;
+	margin: auto;
+}
+
+#warning_image {
+	background: url("warning.png");
+	width: 48px;
+	height: 42px;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+#progress {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+}
+
+.artwork {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	left: 20px;
+}
+
+.spacer {
+	height: 3px;
+}
+
+#refresh {
+	position: absolute;
+	left: 3px;
+	bottom: 3px;
+}
+
+#back {
+	display: none;
+	height: 100%;
+}
+
+#parentDiv {
+	position: absolute;
+	top: 46px;
+	bottom: 0;
+	left: 2px;
+	right: 20px;
+	overflow: hidden;
+}
+
+.mainContent {
+	position: relative;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+	color: #000;
+	/*padding-left: 25px;*/
+	padding: 0 5px;
+}
+
+/* @group Preferences */
+
+.prefs_section {
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background-color: #303030;
+	width: 170px;
+	font: 12px "Helvetica Neue", sans-serif;
+	border: 1px solid white;
+	margin-bottom: 5px;
+	-webkit-border-radius:4px;
+}
+
+.prefs_section_title {
+	width: 150px;
+	margin-bottom: 2px;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	font: 10px "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+div#center_back a:link {
+	color: white;
+	font: 12px "Helvetica Neue", sans-serif;
+	text-decoration: none;
+}
+
+div#center_back a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+div#versioninfo a:link {
+	color: white;
+	font: 10px "Helvetica Neue", sans-serif;
+	text-decoration: none;
+}
+
+div#versioninfo a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+hr {
+	border: none;
+	color: transparent;
+	background-color: transparent;
+	height: 1px;
+}
+
+div.link {
+	padding: 5px;
+}
+
+div.donate {
+	height: 20px;
+}
+
+div.link:hover {
+	background-color: #5e5e5e;
+}
+
+div.link a:link {
+	color: white;
+	font: 12px "Helvetica Neue", sans-serif;
+	text-decoration: none;
+}
+
+div.link a:hover {
+	text-decoration: none;
+}
+
+#versioninfo {
+	position: absolute;
+	bottom: 0px;
+	left: 9px;
+	font: 10px "Helvetica Neue", sans-serif;
+}
+
+#doneButton {
+	position: absolute;
+	bottom: 0px;
+	right: 9px;
+}
+
+.theme_selector {
+	width: 18px;
+	height: 18px;
+	margin: 3px;
+	border: 1px solid white;
+	-webkit-border-radius:4px;
+}
+
+.theme_selector.selected {
+	border: 3px solid white;
+	margin: 0;
+}
+
+.align_selector {
+	width: 24px;
+	height: 16px;
+	background-color: #191919;
+	margin: 2px;
+	padding-top: 2px;
+	text-align: center;
+	-webkit-border-radius:4px;
+}
+
+.font_selector {
+	width: 24px;
+	height: 18px;
+	background-color: #191919;
+	margin: 2px;
+	padding-top: 3px;
+	text-align: center;
+	font-size: 10px;
+	color: white;
+	-webkit-border-radius:4px;
+}
+
+/* @end */
+
+.toolbar_button {
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-bottom: -2px;
+}
+
+/* @group Toolbar */
+
+#toolbar_container {
+	margin-top: 15px;
+	padding-bottom: 15px;
+}
+
+#toolbar {
+	width: 90px;
+	height: 17px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 2px;
+	background: url("../images/default_toolbar.png") no-repeat;
+}
+
+#toolbar a {
+	float: left;
+	margin-right: 2px;
+}
+
+#toolbar #tooltip {
+	font-size: 12px;
+	text-transform: lowercase;
+	position: relative;
+	top: -1px;
+	font-weight: normal;
+	font-style: normal;
+	color: white;
+	text-shadow: rgba(1,1,1,.5) 1px 1px 0;
+}
+
+#toolbar .default {
+	color: #bebebe;
+}
+
+
+/* @end */
+
+/* @group Paste Controls */
+
+.paste_controls {
+	padding-top: 4px;
+	width: 100px;
+	height: 33px;
+	background-image: url("../images/toolbox.png");
+	margin: 25px auto;
+	color: white;
+	text-shadow: none;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.paste_controls_notfound {
+	margin-top: 6px;
+	padding-top: 4px;
+	border-top: 1px solid #243650;
+}
+
+div.paste_controls a:link {
+	color: black;
+	font: 11px "Helvetica Neue", sans-serif;
+	text-decoration: none;
+}
+
+div.paste_controls a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+div.paste_controls_notfound a:link {
+	color: #243650;
+	text-decoration: none;
+}
+
+div.paste_controls_notfound a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+/* @end */
+
+/* @group AppleClasses */
+
+#growbox {
+	position: absolute;
+	right: 13px;
+	bottom: 14px;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+#myScrollArea {
+	
+}
+
+#myScrollbar {
+	position: absolute;
+	top: 47px;
+	bottom: 12px;
+	right: 1px;
+	width: 19px;
+}
+
+.infoButton {
+	position: absolute;
+	bottom: 9px;
+	left: 8px;
+	z-index: 999;
+}
+
+/* @end */

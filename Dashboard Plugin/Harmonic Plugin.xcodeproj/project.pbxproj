@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAppleScriptBuildPhase section */
+		3BB7F3530AB50A5F0049288E /* AppleScript */ = {
+			isa = PBXAppleScriptBuildPhase;
+			buildActionMask = 2147483647;
+			contextName = "";
+			files = (
+				3BF1A9FD0D8252F7008D33ED /* iTunesController.applescript in AppleScript */,
+			);
+			isSharedContext = 0;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXAppleScriptBuildPhase section */
+
+/* Begin PBXBuildFile section */
+		3B1C5D5C0AE2F0870063F337 /* CocoaCryptoHashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C5D5B0AE2F0870063F337 /* CocoaCryptoHashing.m */; };
+		3BB7F27F0AB4FC410049288E /* PluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7F27E0AB4FC410049288E /* PluginController.m */; };
+		3BF1A9F50D8252F7008D33ED /* LyricWiki.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9E50D8252F7008D33ED /* LyricWiki.m */; };
+		3BF1A9F60D8252F7008D33ED /* MQFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9E70D8252F7008D33ED /* MQFunctions.m */; };
+		3BF1A9F70D8252F7008D33ED /* MQITunesAppleScripts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9E90D8252F7008D33ED /* MQITunesAppleScripts.m */; };
+		3BF1A9F80D8252F7008D33ED /* MQLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9EB0D8252F7008D33ED /* MQLyrics.m */; };
+		3BF1A9F90D8252F7008D33ED /* MQLyricsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9ED0D8252F7008D33ED /* MQLyricsContainer.m */; };
+		3BF1A9FA0D8252F7008D33ED /* MQScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9EF0D8252F7008D33ED /* MQScriptController.m */; };
+		3BF1A9FB0D8252F7008D33ED /* MQSeekalyricFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9F10D8252F7008D33ED /* MQSeekalyricFetcher.m */; };
+		3BF1A9FC0D8252F7008D33ED /* NSAppleScript+HandlerCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9F30D8252F7008D33ED /* NSAppleScript+HandlerCalls.m */; };
+		3BF1A9FD0D8252F7008D33ED /* iTunesController.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 3BF1A9F40D8252F7008D33ED /* iTunesController.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* Harmonic Plugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Harmonic Plugin_Prefix.pch"; sourceTree = "<group>"; };
+		3B1C5D5A0AE2F0870063F337 /* CocoaCryptoHashing.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CocoaCryptoHashing.h; sourceTree = "<group>"; };
+		3B1C5D5B0AE2F0870063F337 /* CocoaCryptoHashing.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CocoaCryptoHashing.m; sourceTree = "<group>"; };
+		3BB7F27D0AB4FC410049288E /* PluginController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PluginController.h; sourceTree = "<group>"; };
+		3BB7F27E0AB4FC410049288E /* PluginController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PluginController.m; sourceTree = "<group>"; };
+		3BF1A9E30D8252F7008D33ED /* Lyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lyrics.h; sourceTree = "<group>"; };
+		3BF1A9E40D8252F7008D33ED /* LyricWiki.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricWiki.h; sourceTree = "<group>"; };
+		3BF1A9E50D8252F7008D33ED /* LyricWiki.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricWiki.m; sourceTree = "<group>"; };
+		3BF1A9E60D8252F7008D33ED /* MQFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQFunctions.h; sourceTree = "<group>"; };
+		3BF1A9E70D8252F7008D33ED /* MQFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQFunctions.m; sourceTree = "<group>"; };
+		3BF1A9E80D8252F7008D33ED /* MQITunesAppleScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQITunesAppleScripts.h; sourceTree = "<group>"; };
+		3BF1A9E90D8252F7008D33ED /* MQITunesAppleScripts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQITunesAppleScripts.m; sourceTree = "<group>"; };
+		3BF1A9EA0D8252F7008D33ED /* MQLyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQLyrics.h; sourceTree = "<group>"; };
+		3BF1A9EB0D8252F7008D33ED /* MQLyrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQLyrics.m; sourceTree = "<group>"; };
+		3BF1A9EC0D8252F7008D33ED /* MQLyricsContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQLyricsContainer.h; sourceTree = "<group>"; };
+		3BF1A9ED0D8252F7008D33ED /* MQLyricsContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQLyricsContainer.m; sourceTree = "<group>"; };
+		3BF1A9EE0D8252F7008D33ED /* MQScriptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQScriptController.h; sourceTree = "<group>"; };
+		3BF1A9EF0D8252F7008D33ED /* MQScriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQScriptController.m; sourceTree = "<group>"; };
+		3BF1A9F00D8252F7008D33ED /* MQSeekalyricFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQSeekalyricFetcher.h; sourceTree = "<group>"; };
+		3BF1A9F10D8252F7008D33ED /* MQSeekalyricFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQSeekalyricFetcher.m; sourceTree = "<group>"; };
+		3BF1A9F20D8252F7008D33ED /* NSAppleScript+HandlerCalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAppleScript+HandlerCalls.h"; sourceTree = "<group>"; };
+		3BF1A9F30D8252F7008D33ED /* NSAppleScript+HandlerCalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAppleScript+HandlerCalls.m"; sourceTree = "<group>"; };
+		3BF1A9F40D8252F7008D33ED /* iTunesController.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = iTunesController.applescript; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* Harmonic Plugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Harmonic Plugin.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* Harmonic Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				3BF1AA010D8252FB008D33ED /* Lyrics Framework */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = "Harmonic Plugin";
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3BB7F27D0AB4FC410049288E /* PluginController.h */,
+				3BB7F27E0AB4FC410049288E /* PluginController.m */,
+				3B1C5D5A0AE2F0870063F337 /* CocoaCryptoHashing.h */,
+				3B1C5D5B0AE2F0870063F337 /* CocoaCryptoHashing.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* Harmonic Plugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* Harmonic Plugin_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3BF1AA010D8252FB008D33ED /* Lyrics Framework */ = {
+			isa = PBXGroup;
+			children = (
+				3BF1A9E30D8252F7008D33ED /* Lyrics.h */,
+				3BF1A9E40D8252F7008D33ED /* LyricWiki.h */,
+				3BF1A9E50D8252F7008D33ED /* LyricWiki.m */,
+				3BF1A9E60D8252F7008D33ED /* MQFunctions.h */,
+				3BF1A9E70D8252F7008D33ED /* MQFunctions.m */,
+				3BF1A9E80D8252F7008D33ED /* MQITunesAppleScripts.h */,
+				3BF1A9E90D8252F7008D33ED /* MQITunesAppleScripts.m */,
+				3BF1A9EA0D8252F7008D33ED /* MQLyrics.h */,
+				3BF1A9EB0D8252F7008D33ED /* MQLyrics.m */,
+				3BF1A9EC0D8252F7008D33ED /* MQLyricsContainer.h */,
+				3BF1A9ED0D8252F7008D33ED /* MQLyricsContainer.m */,
+				3BF1A9EE0D8252F7008D33ED /* MQScriptController.h */,
+				3BF1A9EF0D8252F7008D33ED /* MQScriptController.m */,
+				3BF1A9F00D8252F7008D33ED /* MQSeekalyricFetcher.h */,
+				3BF1A9F10D8252F7008D33ED /* MQSeekalyricFetcher.m */,
+				3BF1A9F20D8252F7008D33ED /* NSAppleScript+HandlerCalls.h */,
+				3BF1A9F30D8252F7008D33ED /* NSAppleScript+HandlerCalls.m */,
+				3BF1A9F40D8252F7008D33ED /* iTunesController.applescript */,
+			);
+			name = "Lyrics Framework";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* Harmonic Plugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Harmonic Plugin" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				3BB7F3530AB50A5F0049288E /* AppleScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Harmonic Plugin";
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = "Harmonic Plugin";
+			productReference = 8D5B49B6048680CD000E48DA /* Harmonic Plugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Harmonic Plugin" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* Harmonic Plugin */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* Harmonic Plugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BB7F27F0AB4FC410049288E /* PluginController.m in Sources */,
+				3B1C5D5C0AE2F0870063F337 /* CocoaCryptoHashing.m in Sources */,
+				3BF1A9F50D8252F7008D33ED /* LyricWiki.m in Sources */,
+				3BF1A9F60D8252F7008D33ED /* MQFunctions.m in Sources */,
+				3BF1A9F70D8252F7008D33ED /* MQITunesAppleScripts.m in Sources */,
+				3BF1A9F80D8252F7008D33ED /* MQLyrics.m in Sources */,
+				3BF1A9F90D8252F7008D33ED /* MQLyricsContainer.m in Sources */,
+				3BF1A9FA0D8252F7008D33ED /* MQScriptController.m in Sources */,
+				3BF1A9FB0D8252F7008D33ED /* MQSeekalyricFetcher.m in Sources */,
+				3BF1A9FC0D8252F7008D33ED /* NSAppleScript+HandlerCalls.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Harmonic Plugin_Prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "Harmonic Plugin";
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Harmonic Plugin_Prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "Harmonic Plugin";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-lcrypto";
+				OTHER_OSAFLAGS = "-x";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Harmonic Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Harmonic Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<link href="design/harmonic.css" media="all" rel="Stylesheet" type="text/css" />
+	<link href="design/harmonic_themes.css" media="all" rel="Stylesheet" type="text/css" />
+	<link href="design/flip.css" media="all" rel="Stylesheet" type="text/css" />
+	
+	<script src="lib/prototype.js" type="text/javascript"></script>
+	<script src="lib/effects.js" type="text/javascript"></script>
+	
+	<script src="js/harmonic.js" type="text/javascript"></script>
+	<script src="js/resize.js" type="text/javascript"></script>
+	<script src="js/mindquirk_updater.js" type="text/javascript"></script>
+	
+	<script src="/System/Library/WidgetResources/AppleClasses/AppleScrollArea.js" type="text/javascript"></script>
+	<script src="/System/Library/WidgetResources/AppleClasses/AppleScrollbar.js" type="text/javascript"></script>
+	<script src="js/AppleInfoButton.js" type="text/javascript"></script>
+	<script src="/System/Library/WidgetResources/AppleClasses/AppleButton.js" type="text/javascript"></script>
+	<script src="/System/Library/WidgetResources/AppleClasses/AppleAnimator.js" type="text/javascript"></script>
+	
+	<title>Harmonic</title>
+</head>
+<body onLoad="open_widget();displayCurrentVersion();checkForNewVersion();" id="the_body">
+
+    <div id="front" class="theme_blue">
+        <div class="frame_top_left"></div>
+        <div class="frame_top_center"></div>
+        <div class="frame_top_right"></div>
+        <div class="frame_bottom_left"></div>
+        <div class="frame_bottom_center"></div>
+        <div class="frame_bottom_right"></div>
+        <div class="frame_left_edge"></div>
+        <div class="frame_right_edge"></div>
+        <div class="frame_center">
+            <div class="header" onClick="header_clicked();">
+                <div class="title" id="song_title">&nbsp;</div>
+                <div class="subtitle" id="song_artist">&nbsp;</div>
+            </div>
+            <div id="parentDiv">
+                <div id="lyrics" class="mainContent">&nbsp;</div>
+            </div>
+            <div id="scroll_cover_top"></div>
+            <div id="scroll_cover_bottom"></div>
+            <div id="myScrollbar"></div>
+        </div>
+        <div id="progress"><img src='images/dot.png' alt="working..."></div>
+        <div id="debug">debug</div>
+        <div id="infoButton" class="infoButton">&nbsp;</div>
+        <div id="update" style="display:none;"><a href="#" onclick="widget.openURL('http://mindquirk.com/');"><img src="images/update.png"></a></div>
+    </div>
+    
+    <div id="theme_name" style="display:none;">&nbsp;</div>
+
+    <img id="growbox" src="/System/Library/WidgetResources/resize.png" onmousedown="mouseDown(event);" alt="resize">
+    
+    <div id="back" class="theme_black">
+        <div class="frame_top_left"></div>
+        <div class="frame_top_center"></div>
+        <div class="frame_top_right"></div>
+        <div class="frame_bottom_left"></div>
+        <div class="frame_bottom_center"></div>
+        <div class="frame_bottom_right"></div>
+        <div class="frame_left_edge"></div>
+        <div class="frame_right_edge"></div>
+        <div class="frame_center">
+            <div class="header">
+                <div class="title">Harmonic</div>
+                <div class="subtitle">by mindquirk software</div>
+            </div>
+            <div class="prefs_section_title">&nbsp;</div>
+            <div class="prefs_section">
+                <table border="0" cellpadding="0" cellspacing="0" align="center">
+                    <tr>
+                        <td><div id="blueButton" class="theme_selector" style="background-color:#64A3F8" onClick="changeSkin('blue');"></div></td>
+                        <td><div id="indigoButton" class="theme_selector" style="background-color:#0C207B" onClick="changeSkin('indigo');"></div></td>
+                        <td><div id="greenButton"class="theme_selector" style="background-color:#B5D83C;" onClick="changeSkin('green');"></div></td>
+                        <td><div id="orangeButton"class="theme_selector" style="background-color:orange;" onClick="changeSkin('orange');"></div></td>
+	                    </tr>
+					    <tr>
+                        <td><div id="pinkButton"class="theme_selector" style="background-color:#ff4dca;" onClick="changeSkin('pink');"></div></td>
+                        <td><div id="redButton" class="theme_selector" style="background-color:#883520;" onClick="changeSkin('red');"></div></td>
+                        <td><div id="blackButton"class="theme_selector" style="background-color:black;" onClick="changeSkin('black');"></div></td>
+                        <td><div id="whiteButton"class="theme_selector" style="background-color:white;" onClick="changeSkin('white');"></div></td>
+                    </tr>
+                </table>
+				<hr />
+                <table border="0" cellpadding="0" cellspacing="0" align="center">
+                    <tr>
+                        <td>
+							<div id="leftAlign" class="align_selector" onClick="changeAlign('left');">
+								<img src="images/leftAlign.png" alt="leftAlign" />
+							</div>
+						</td>
+                        <td>
+							<div id="centerAlign"class="align_selector" onClick="changeAlign('center');">
+								<img src="images/centerAlign.png" alt="centerAlign" />
+							</div>
+						</td>
+                        <td>
+							<div id="rightAlign"class="align_selector" onClick="changeAlign('right');">
+								<img src="images/rightAlign.png" alt="rightAlign" />
+							</div>
+						</td>
+                    </tr>
+                    <tr>
+                        <td><div id="11Font" class="font_selector" style="font-size:10px" onClick="changeSize('11');">11</div></td>
+                        <td><div id="12Font"class="font_selector" style="font-size:12px" onClick="changeSize('12');">12</div></td>
+                        <td><div id="14Font"class="font_selector" style="font-size:14px;" onClick="changeSize('14');">14</div></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="prefs_section link">
+				<a href="#" onclick="widget.openURL('http://mindquirk.com/')">created by <strong>mindquirk</strong><br />http://mindquirk.com</a>
+            </div>
+            <div class="prefs_section link donate">
+				<a href="#" onclick="widget.openURL('http://mindquirk.com/donate/')"><img src="images/donations.png"/></a>
+            </div>
+            <div class="prefs_section link">
+				<a href="#" onclick="widget.openURL('http://lyricwiki.org/')">lyrics by <strong>lyricwiki</strong></a>
+            </div>
+            <div id="doneButton"></div>
+            <div id="versioninfo" style="font-weight:bold;">&nbsp;</div>
+        </div>
+    </div>
+</body>
+</html>
