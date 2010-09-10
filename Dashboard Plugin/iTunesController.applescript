@@ -1,11 +1,3 @@
-on itunes_version(x)
-	if itunes_run() is false then return ""
-	
-	tell application "iTunes"
-		return version as string
-	end tell
-end itunes_version
-
 on curl_this(theURL)
 	set the_command to "curl " & quoted form of theURL & " --connect-timeout 3 " --"-A " & (quoted form of create_random(5, 50) as string)
 	return do shell script (the_command as Unicode text)
@@ -55,8 +47,7 @@ end itunes_trackname
 on can_store_lyrics(x)
 	if itunes_run() then
 		tell application "iTunes"
-			
-			if (version as string) is less than 7 then return "Harmonic requires <a href='#' onclick=\"widget.openURL('http://www.apple.com/itunes');\">iTunes 7</a>"
+			if (version as integer) is less than 7 then return "Harmonic requires <a href='#' onclick=\"widget.openURL('http://www.apple.com/itunes');\">iTunes 7</a>"
 			
 			
 			if my itunes_playing() is false then return "iTunes is Idle"
@@ -145,4 +136,3 @@ on create_random(min, max)
 	end repeat
 	return x as string
 end create_random
-
