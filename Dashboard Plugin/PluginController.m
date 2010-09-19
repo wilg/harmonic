@@ -12,7 +12,7 @@ WebScriptObject *webScriptObject = nil;
 	
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationRecieved:) name: @"com.apple.iTunes.playerInfo" object: nil];
 	
-	badServerStrings = nil;
+	badServerStrings = [[NSMutableArray alloc] init];
 	[self addServerErrorToClearList:@"lyricsdir"];
 	[self addServerErrorToClearList:@"Lyrics Directory"];
 	[self addServerErrorToClearList:@"Don't forget to donate to keep this great service running"];
@@ -197,14 +197,7 @@ WebScriptObject *webScriptObject = nil;
 }
 
 - (void) addServerErrorToClearList:(NSString *)errorString {
-	if (badServerStrings == nil) {
-		badServerStrings = [NSArray arrayWithObject:errorString];
-	}
-	else {
-		NSMutableArray *array = [NSMutableArray arrayWithArray:badServerStrings];
-		[array addObject:errorString];
-		badServerStrings = [NSArray arrayWithArray:array]; 
-	}
+	[badServerStrings addObject:errorString];
 }
 
 - (void) logMessage:(NSString *)str {
