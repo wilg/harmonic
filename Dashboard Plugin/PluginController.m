@@ -25,6 +25,7 @@ WebScriptObject *webScriptObject = nil;
 }
 
 -(void)dealloc {
+	[badServerStrings release];
 	[super dealloc];
 }
 
