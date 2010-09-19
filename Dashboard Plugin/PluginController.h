@@ -3,7 +3,7 @@
 
 @interface PluginController : NSObject {
 
-	NSArray *badServerStrings;
+	NSMutableArray *badServerStrings;
 	
 }
 
