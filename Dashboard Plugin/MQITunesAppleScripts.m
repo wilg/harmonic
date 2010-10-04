@@ -9,7 +9,7 @@
     NSAppleEventDescriptor *arguments = [[NSAppleEventDescriptor alloc] initListDescriptor];
     [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:@""] atIndex: 1];
 	
-	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"itunes_lyrics" arguments:arguments];
+	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"getCurrentLyrics" arguments:arguments]; //arguments are stupidly needed, otherwise the selector is not recognized
 }
 
 + (void)setLyrics:(NSString *)theLyrics

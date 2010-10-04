@@ -3,14 +3,14 @@ on curl_this(theURL)
 	return do shell script (the_command as Unicode text)
 end curl_this
 
-on itunes_lyrics(x)
-	if itunes_playing() is false then return ""
-	
-	tell application "iTunes"
-		set y to lyrics of current track as Unicode text
-	end tell
-	return y
-end itunes_lyrics
+on getCurrentLyrics()
+	if itunes_playing() then
+		tell application "iTunes"
+			return lyrics of current track as Unicode text
+		end tell
+	end if
+	return ""
+end getCurrentLyrics
 
 on itunes_set_lyrics(thelyrics)
 	if itunes_playing() is false then return ""
