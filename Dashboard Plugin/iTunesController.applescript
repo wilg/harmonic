@@ -1,16 +1,21 @@
+(*
+***WARNING***
+*Do NOT try to change from underscored method names to camelcased ones, calls will fail! (and you'll spend two hours debugging a -1708  >.<  There must be a case-sensitivity issue somewhere in the call stack)
+*)
+
 on curl_this(theURL)
 	set the_command to "curl " & quoted form of theURL & " --connect-timeout 3 " --"-A " & (quoted form of create_random(5, 50) as string)
 	return do shell script (the_command as Unicode text)
 end curl_this
 
-on getCurrentLyrics()
+on get_current_lyrics()
 	if itunes_playing() then
 		tell application "iTunes"
 			return lyrics of current track as Unicode text
 		end tell
 	end if
 	return ""
-end getCurrentLyrics
+end get_current_lyrics
 
 on itunes_set_lyrics(thelyrics)
 	if itunes_playing() is false then return ""

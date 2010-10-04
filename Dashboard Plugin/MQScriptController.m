@@ -18,9 +18,8 @@
     NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL: scriptURL error: &errorInfo];
     
     /* See if there were any errors loading the script */
-    if (!script || errorInfo) {
+    if (! script || errorInfo)
         [self handleScriptError: errorInfo];
-    }
 
     errorInfo = nil;
 
