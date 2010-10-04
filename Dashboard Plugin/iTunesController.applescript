@@ -46,10 +46,8 @@ end itunes_trackname
 
 on can_store_lyrics(x)
 	if itunes_run() then
+		if not isiTunesCompatible() then return "Harmonic requires <a href='#' onclick=\"widget.openURL('http://www.apple.com/itunes');\">iTunes 7</a>"
 		tell application "iTunes"
-			if (version as integer) is less than 7 then return "Harmonic requires <a href='#' onclick=\"widget.openURL('http://www.apple.com/itunes');\">iTunes 7</a>"
-			
-			
 			if my itunes_playing() is false then return "iTunes is Idle"
 			
 			
@@ -91,6 +89,15 @@ on should_check(u)
 	
 	return true
 end should_check
+
+on isiTunesCompatible()
+	tell application "iTunes"
+		set iTunesVersion to get version as string
+	end tell
+	considering numeric strings
+		return iTunesVersion ≥ "7.0"
+	end considering
+end isiTunesCompatible
 
 on itunes_run()
 	tell application "System Events"
