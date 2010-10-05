@@ -10,7 +10,6 @@
 + (NSString *)artist;
 + (NSString *)trackname;
 + (NSString *)curlURL:(NSURL *)url;
-+ (NSString *)version;
 + (NSString *)lyricsError;
 + (BOOL)should_check;
 
