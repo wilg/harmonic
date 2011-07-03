@@ -14,52 +14,60 @@
 
 + (MQLyricsContainer *)lyricsWithArtist:(NSString *)artist title:(NSString *)title{
 
-	NSError *error;
+	NSError *error = nil;
 	NSString *lyrics = nil;
+    
+    NSURL *apiURL=nil;
+    NSURL *contentURL=nil;
+    
+    NSXMLDocument * xmlResult;
+    NSXMLElement *realURLNode;
+    NSXMLElement *realContentNode;
+    NSArray *nodes;
 
-	NSString *urlString = [NSString stringWithFormat:@"http://lyricwiki.org/api.php?fmt=text&artist=%@&song=%@", [self stripPunctuationForURL:artist], [self stripPunctuationForURL:title]];
-	
+    
+	NSString *urlString = [NSString stringWithFormat:@"http://lyricwiki.org/api.php?fmt=xml&artist=%@&song=%@", [self stripPunctuationForURL:artist], [self stripPunctuationForURL:title]];
 	[MQFunctions debugLog:urlString];
+	apiURL=[NSURL URLWithString:urlString];
+    
+    
+    //geting xml useing API to get the 'real' content url
+    xmlResult=[[NSXMLDocument alloc] initWithContentsOfURL:apiURL options:NSXMLDocumentTidyXML error:&error];
+    nodes = [xmlResult nodesForXPath:@"//LyricsResult/url" error:&error];
+    [xmlResult release];
+    if ([nodes count] > 0 && !error) {
+        realURLNode = [nodes objectAtIndex:0];
+        contentURL=[NSURL URLWithString:[realURLNode stringValue]];
+    }else{
+        lyrics=[error description];
+        return nil;
+    }   
+    
+    
+    //now we got the content url...we can proceeeeed
+    xmlResult=[[NSXMLDocument alloc] initWithContentsOfURL:contentURL options:NSXMLDocumentTidyHTML error:&error];
+    nodes = [xmlResult nodesForXPath:@"//div[@class=\"lyricbox\"]" error:&error];
+    realContentNode = [nodes objectAtIndex:0];
+    nodes=[realContentNode children];
+    [xmlResult release];
+    if ([nodes count] > 0 && !error) {
+        int i;
+        for(i=0;i<[nodes count];i++){
+            NSXMLNode *node = [nodes objectAtIndex:i];
 
-	NSStringEncoding encoding;
-	NSString *theSource = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] usedEncoding:&encoding error:&error];
-
-	if (theSource == nil) {
-		[MQFunctions debugLog:@"This must  be Tiger. Resorting to cURL."];
-		theSource = [MQFunctions cURLWithURLString:urlString];
-
-		if (theSource == nil) {
-			return nil;
-		}
-	}
-	
-	if ([theSource rangeOfString:@"#redirect"].location != NSNotFound || [theSource rangeOfString:@"#Redirect"].location != NSNotFound) {
-		//redirected
-		NSString *artistAndSong = [theSource substringFromIndex:[theSource rangeOfString:@"[["].location +2 ];
-		artistAndSong = [artistAndSong substringToIndex:[artistAndSong rangeOfString:@"]]"].location];
-		NSString *newArtist = [artistAndSong substringToIndex:[artistAndSong rangeOfString:@":"].location];
-		NSString *newTitle = [artistAndSong substringFromIndex:[artistAndSong rangeOfString:@":"].location + 1];
-		urlString = [NSString stringWithFormat:@"http://lyricwiki.org/api.php?fmt=text&artist=%@&song=%@", [self stripPunctuationForURL:newArtist], [self stripPunctuationForURL:newTitle]];
-		[MQFunctions debugLog:[NSString stringWithFormat:@"redirecting to %@", urlString]];
-		theSource = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] usedEncoding:&encoding error:nil];
-	}
-	
-	if ([theSource isEqual:@""] || [theSource isEqual:@" "] || [theSource isEqual:@"Not found"])
-		return nil;
-		
-	//terrible errors
-	if ([theSource rangeOfString:@"pedlfaster.pedlr.com"].location != NSNotFound || [theSource rangeOfString:@"mysqladmin flush-hosts"].location != NSNotFound)
-		return nil;
-		
-	if (theSource != nil)
-		lyrics = theSource;
-	else
-		return nil;
-	
+            if([node kind] != NSXMLTextKind && ![[node name] isEqualToString:@"br"]){
+                [node detach];
+            }
+        }
+        lyrics =[NSString stringWithString:[realContentNode stringValue]];
+    }else{
+        return nil;
+    }    
+    
+    
 	return [MQLyricsContainer containerWithLyrics:lyrics source:[self sourceName]];
 
 }
-
 +(NSString *)theAtEnd:(NSString *)theString
 {	
 	if ([theString length] > 3) {
