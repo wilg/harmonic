@@ -5,7 +5,7 @@ function displayCurrentVersion() {
 }
 
 function checkForNewVersion() {
-	
+	/*
 	var currentVersion = trim(getPlistProperty("Info", "CFBundleVersion"));
 	var url = "http://mindquirk.com/sparkle/harmonic.txt"
 	var request = new XMLHttpRequest();
@@ -30,6 +30,7 @@ function checkForNewVersion() {
 	}
 	
 	request.send(null);
+    */
 }
 
 function getPlistProperty(filename, property){
