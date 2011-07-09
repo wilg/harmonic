@@ -21,7 +21,6 @@
 
 /* Begin PBXBuildFile section */
 		3BB7F27F0AB4FC410049288E /* PluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB7F27E0AB4FC410049288E /* PluginController.m */; };
-		3BF1A9F50D8252F7008D33ED /* LyricWiki.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9E50D8252F7008D33ED /* LyricWiki.m */; };
 		3BF1A9F60D8252F7008D33ED /* MQFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9E70D8252F7008D33ED /* MQFunctions.m */; };
 		3BF1A9F70D8252F7008D33ED /* MQITunesAppleScripts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9E90D8252F7008D33ED /* MQITunesAppleScripts.m */; };
 		3BF1A9F80D8252F7008D33ED /* MQLyrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1A9EB0D8252F7008D33ED /* MQLyrics.m */; };
@@ -55,8 +54,6 @@
 		3BB7F27D0AB4FC410049288E /* PluginController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PluginController.h; sourceTree = "<group>"; };
 		3BB7F27E0AB4FC410049288E /* PluginController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PluginController.m; sourceTree = "<group>"; };
 		3BF1A9E30D8252F7008D33ED /* Lyrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lyrics.h; sourceTree = "<group>"; };
-		3BF1A9E40D8252F7008D33ED /* LyricWiki.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricWiki.h; sourceTree = "<group>"; };
-		3BF1A9E50D8252F7008D33ED /* LyricWiki.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricWiki.m; sourceTree = "<group>"; };
 		3BF1A9E60D8252F7008D33ED /* MQFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQFunctions.h; sourceTree = "<group>"; };
 		3BF1A9E70D8252F7008D33ED /* MQFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQFunctions.m; sourceTree = "<group>"; };
 		3BF1A9E80D8252F7008D33ED /* MQITunesAppleScripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQITunesAppleScripts.h; sourceTree = "<group>"; };
@@ -167,8 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				3BF1A9E30D8252F7008D33ED /* Lyrics.h */,
-				3BF1A9E40D8252F7008D33ED /* LyricWiki.h */,
-				3BF1A9E50D8252F7008D33ED /* LyricWiki.m */,
 				3BF1A9E60D8252F7008D33ED /* MQFunctions.h */,
 				3BF1A9E70D8252F7008D33ED /* MQFunctions.m */,
 				3BF1A9E80D8252F7008D33ED /* MQITunesAppleScripts.h */,
@@ -249,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB7F27F0AB4FC410049288E /* PluginController.m in Sources */,
-				3BF1A9F50D8252F7008D33ED /* LyricWiki.m in Sources */,
 				3BF1A9F60D8252F7008D33ED /* MQFunctions.m in Sources */,
 				3BF1A9F70D8252F7008D33ED /* MQITunesAppleScripts.m in Sources */,
 				3BF1A9F80D8252F7008D33ED /* MQLyrics.m in Sources */,

@@ -4,4 +4,4 @@
 #include "MQITunesAppleScripts.h"
 
 #include "MQLyrics.h"
-#import "LyricWiki.h"
+

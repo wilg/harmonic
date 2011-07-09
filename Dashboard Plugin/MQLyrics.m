@@ -21,88 +21,22 @@ BOOL checkItunes = YES;
 
 + (MQLyricsContainer *)lyricsWithArtist:(NSString *)artist title:(NSString *)title
 {
-
-	BOOL needsCache = YES;
-
 	MQLyricsContainer *lyrics = nil;
 	
-	if (checkItunes) {
-		lyrics = [MQLyricsContainer containerWithLyrics:[MQITunesAppleScripts lyrics] source:@"iTunes Metadata"];
-		needsCache = NO;
-	}
-	
-	if (checkOnline && [self isEmpty:lyrics]) {
-		[MQFunctions debugLog:@"checkOnline"];
-
-		lyrics = [self checkOnlineWithArtist:artist title:title];
-		
-		if (![self isEmpty:lyrics])
-			needsCache = YES;
-
-	}
-	
+	lyrics = [MQLyricsContainer containerWithLyrics:[MQITunesAppleScripts lyrics] source:@"iTunes Metadata"];
+    
 	if ([self isEmpty:lyrics]) {
 		lyrics = nil;
 	}
-	else {
-		if (needsCache && shouldCache) {
-			[MQITunesAppleScripts setLyrics:[lyrics lyrics]];
-		}
-	}
 	
 	return lyrics;
 }
 
-+ (MQLyricsContainer *)checkOnlineWithArtist:(NSString *)artist title:(NSString *)title
-{ 
-	[MQFunctions debugLog:@"checkOnlineWithArtist"];
-	NSMutableArray *queries = [NSMutableArray array];
-	MQLyricsContainer *lyrics = nil;
-	
-	// add the original query
-	[queries addObject:[NSArray arrayWithObjects:artist, title, nil]];
-	
-	// in some instances we might want to try other options if artist is something like "50 Cent feat. Someone Else"
-	
-	// by X feat. Y
-	if ([artist rangeOfString:@" feat."].location != NSNotFound) {
-		[queries addObject:[NSArray arrayWithObjects:[artist substringToIndex:[artist rangeOfString:@" feat."].location], title, nil]];
-	}
-	
-	// by X & Y
-	if ([artist rangeOfString:@" & "].location != NSNotFound) {
-		[queries addObject:[NSArray arrayWithObjects:[artist substringToIndex:[artist rangeOfString:@" & "].location], title, nil]];
-		[queries addObject:[NSArray arrayWithObjects:[artist substringFromIndex:[artist rangeOfString:@" & "].location + 3], title, nil]];
-	}
-
-
-	NSEnumerator *loop = [queries objectEnumerator];
-	id thisQuery;
-	while ( lyrics == nil && (thisQuery = [loop nextObject]) ) {
-		// loops through every lyrics provider
-		// providers must either return an MQLyricsContainer or nil
-		
-		if (lyrics == nil)
-			lyrics = [LyricWiki lyricsWithArtist:[thisQuery objectAtIndex:0] title:[thisQuery objectAtIndex:1]];
-		
-	}
-
-	[MQFunctions debugLog:@"checkOnlineWithArtist.... done"];
-
-	return lyrics;
-
-}
 
 + (MQLyricsContainer *)lyricsFromCurrentiTunesTrack
 {
 	return [self lyricsWithArtist:[MQITunesAppleScripts artist] title:[MQITunesAppleScripts trackname]];
 }
-
-+ (MQLyricsContainer *)lyricsFromCurrentiTunesTrackOffline
-{
-	return [self lyricsWithArtist:[MQITunesAppleScripts artist] title:[MQITunesAppleScripts trackname]];
-}
-
 
 + (NSString *)cleanUpLyricsString:(NSString *)theLyrics
 {

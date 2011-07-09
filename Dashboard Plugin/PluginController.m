@@ -47,7 +47,7 @@ WebScriptObject *webScriptObject = nil;
 	NSString *retval = nil;
 	
 	//NSLog(@"webScriptNameForSelector");
-	if (aSel == @selector(lyricsForCurrentSong:)) {
+	if (aSel == @selector(lyricsForCurrentSong)) {
 		retval = @"lyricsForCurrentSong";
 		
 	} else if (aSel == @selector(currentSongName)) {
@@ -103,51 +103,29 @@ WebScriptObject *webScriptObject = nil;
 // identified in isSelectorExcludedFromWebScript:.
 /*********************************************/
 
-- (NSString *) lyricsForCurrentSong:(BOOL)checkOnline {
-	NSString *returnValue = @"<!--error-->Unknown Error";	
+- (NSString *) lyricsForCurrentSong {
+	NSString *returnValue = @"<!--error-->";	
 	
 	if ([[MQITunesAppleScripts lyricsError] isEqual:@"none"]){
 		
 		//setup MQLyrics
 		[MQLyrics setShouldCache:YES];
 		[MQLyrics setCheckItunes:YES];
-		
-		if (checkOnline)
-			[MQLyrics setCheckOnline:YES];
-		else
-			[MQLyrics setCheckOnline:NO];
+        [MQLyrics setCheckOnline:NO];
 		
 		MQLyricsContainer *lyrics;
 		lyrics = [MQLyrics lyricsFromCurrentiTunesTrack];
 
 		if ([lyrics lyrics] != nil) {
 			//got lyrics
-		
-			//clean up old bullshit
-			BOOL shouldClear = NO;
-			
-			
-			if (![self containsValidLyrics:[lyrics lyrics]])
-				shouldClear = YES;
-				
-						
-			if ([lyrics isInstrumental])
-				returnValue = [NSString stringWithFormat:@"<!--instrumental-->", [lyrics lyricsHTML]];
-			else
-				returnValue = [NSString stringWithFormat:@"%@<!--success-->", [lyrics lyricsHTML]];
-				
-			if (shouldClear) {
-
-				[self clearLyrics];
 				lyrics = [MQLyrics lyricsFromCurrentiTunesTrack];
-				if (![self containsValidLyrics:[lyrics lyrics]])
-					returnValue = @"<!--error--><!--cantfind-->";
-
-			}
-
-		}
-		else {
-				returnValue = @"<!--error--><!--cantfind-->";
+            if (![self containsValidLyrics:[lyrics lyrics]]){
+					returnValue = @"<!--error-->The lyrics is invalid";
+            }else{
+                returnValue = [lyrics lyrics];
+            }    
+		} else {
+				returnValue = @"<!--error-->Can't find lyrics";
 		}
 	}
 	else {
