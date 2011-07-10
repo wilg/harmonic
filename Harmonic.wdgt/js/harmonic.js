@@ -119,11 +119,13 @@ function LyricsMain() {
 	var curartist = $("song_artist").innerHTML;
     
     var itunesLyrics=HarmonicPlugin.lyricsForCurrentSong();
-    if(widget.preferenceForKey("last_played_song") != HarmonicPlugin.currentSongName()){
-    if (itunesLyrics.indexOf('<!--error-->') == -1  ){
+    if(widget.preferenceForKey("last_played_song") != HarmonicPlugin.currentSongName() //song is switched
+    || (cursong=="&nbsp;" && curartist=="&nbsp;")){//we just started but last time we sarted there was same song playing
+        
+        if (itunesLyrics.indexOf('<!--error-->') == -1  ){
             setLyricsText(itunesLyrics);
             alert("NO new song!")
-    } else {
+        } else {
             alert("new song!")
             var titleEsc=HarmonicPlugin.currentSongName();
             var artistEsc=HarmonicPlugin.currentArtistName();
@@ -136,7 +138,7 @@ function LyricsMain() {
         
             var lyrdb=new Lyrics.Fetcher.lyrdb();
             lyrdb.fetch(artistEsc,titleEsc);
-	}
+        }
     }
     
     //var theLyrics = HarmonicPlugin.lyricsForCurrentSong(shouldCheckNet);
@@ -165,7 +167,7 @@ function setLyricsText(theLyrics){
         theLyrics = spacer + theLyrics + spacer;
         $("lyrics").innerHTML = theLyrics.replace(/(\r\n)|(\n)|(\r)/ig,"<br>");;
     }
-    if (theLyrics.indexOf("<!--success-->") >= 0){
+    if (theLyrics.indexOf("<!--error-->") == -1){
 		appendToolbar("lyrics_found");
     }
 
