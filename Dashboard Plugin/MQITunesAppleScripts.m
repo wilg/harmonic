@@ -9,7 +9,7 @@
     NSAppleEventDescriptor *arguments = [[NSAppleEventDescriptor alloc] initListDescriptor];
     [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:@""] atIndex: 1];
 	
-	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"itunes_lyrics" arguments:arguments];
+	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"current_lyrics" arguments:arguments]; //arguments are stupidly needed, otherwise the selector is not recognized
 }
 
 + (void)setLyrics:(NSString *)theLyrics
@@ -17,7 +17,7 @@
     NSAppleEventDescriptor *arguments = [[NSAppleEventDescriptor alloc] initListDescriptor];
     [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:theLyrics] atIndex: 1];
 	
-	[MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"itunes_set_lyrics" arguments:arguments];
+	[MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"set_current_lyrics" arguments:arguments];
 }
 
 
@@ -26,7 +26,7 @@
     NSAppleEventDescriptor *arguments = [[NSAppleEventDescriptor alloc] initListDescriptor];
     [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:@""] atIndex: 1];
 	
-	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"itunes_artist" arguments:arguments];
+	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"current_artist" arguments:arguments];
 }
 
 + (NSString *)trackname
@@ -34,7 +34,7 @@
     NSAppleEventDescriptor *arguments = [[NSAppleEventDescriptor alloc] initListDescriptor];
     [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:@""] atIndex: 1];
 	
-	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"itunes_trackname" arguments:arguments];
+	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"current_title" arguments:arguments];
 }
 
 + (NSString *)curlURL:(NSURL *)url
@@ -43,14 +43,6 @@
     [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:[url absoluteString]] atIndex: 1];
 	NSString *x = [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"curl_this" arguments:arguments];
 	return x;
-}
-
-+ (NSString *)version
-{
-    NSAppleEventDescriptor *arguments = [[NSAppleEventDescriptor alloc] initListDescriptor];
-    [arguments insertDescriptor:[NSAppleEventDescriptor descriptorWithString:@""] atIndex: 1];
-	
-	return [MQScriptController stringFromScriptNamed:@"iTunesController" handler:@"itunes_version" arguments:arguments];
 }
 
 + (NSString *)lyricsError

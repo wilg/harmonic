@@ -118,17 +118,39 @@ function LyricsMain() {
 	var cursong = $("song_title").innerHTML;
 	var curartist = $("song_artist").innerHTML;
     
-    var shouldCheckNet = true;
-
-    if ( widget.preferenceForKey("last_played_song") == HarmonicPlugin.currentSongName() ) {
-        shouldCheckNet = false;
-		alert("NO new song!")
+    var itunesLyrics=HarmonicPlugin.lyricsForCurrentSong();
+    if(widget.preferenceForKey("last_played_song") != HarmonicPlugin.currentSongName() //song is switched
+    || (cursong=="&nbsp;" && curartist=="&nbsp;")){//we just started but last time we sarted there was same song playing
+        
+        if (itunesLyrics.indexOf('<!--error-->') == -1  ){
+            setLyricsText(itunesLyrics);
+            alert("NO new song!")
+        } else {
+            alert("new song!")
+            var titleEsc=HarmonicPlugin.currentSongName();
+            var artistEsc=HarmonicPlugin.currentArtistName();
+        
+            LyricsFetcherCallIndex=0;
+            LyricsFetcherSuccessIndex=0;
+        
+            var ChartLyrics=new Lyrics.Fetcher.ChartLyrics();
+            ChartLyrics.fetch(artistEsc,titleEsc);
+        
+            var lyrdb=new Lyrics.Fetcher.lyrdb();
+            lyrdb.fetch(artistEsc,titleEsc);
+        }
     }
-	else {
-		alert("new song!")
-	}
     
-    var theLyrics = HarmonicPlugin.lyricsForCurrentSong(shouldCheckNet);
+    //var theLyrics = HarmonicPlugin.lyricsForCurrentSong(shouldCheckNet);
+
+
+}
+function filedLyricsFetching(){
+	warning_image("Can't Find Lyrics");
+	appendToolbar("no_lyrics_found");
+}
+function setLyricsText(theLyrics){
+    
 	if (theLyrics == null) {
 		log("Plugin returned null value.")
 		warning_image("Plugin Not Responding");
@@ -137,24 +159,15 @@ function LyricsMain() {
 	}
     
     var spacer = "<div style='height:5px;width:10px;'>&nbsp;</div>";
-    alert(theLyrics);
-    if (theLyrics.indexOf("<!--error-->") >= 0 || theLyrics == ""){
-	    if (theLyrics.indexOf("<!--cantfind-->") >= 0) {
-		    warning_image("Can't Find Lyrics");
-			appendToolbar("no_lyrics_found");
-		}
-		else {
-			warning_image(theLyrics);
-		}
-    }
-    else if (theLyrics.indexOf("<!--instrumental-->") >= 0){
+
+    if (theLyrics.indexOf("<!--instrumental-->") >= 0 || theLyrics.match(/^instrumental/i)){
         instrumental_image("");
     }
     else {
         theLyrics = spacer + theLyrics + spacer;
-        $("lyrics").innerHTML = theLyrics;
+        $("lyrics").innerHTML = theLyrics.replace(/(\r\n)|(\n)|(\r)/ig,"<br>");;
     }
-    if (theLyrics.indexOf("<!--success-->") >= 0){
+    if (theLyrics.indexOf("<!--error-->") == -1){
 		appendToolbar("lyrics_found");
     }
 
